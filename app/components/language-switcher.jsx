@@ -23,8 +23,8 @@ export default function LanguageSwitcher() {
     setCurrentLanguage(lang)
   }, [language])
 
-  const handleLanguageChange = (lang: (typeof languages)[0]) => {
-    changeLanguage(lang.code as any)
+  const handleLanguageChange = (lang) => {
+    changeLanguage(lang.code)
     setCurrentLanguage(lang)
   }
 
@@ -48,4 +48,3 @@ export default function LanguageSwitcher() {
     </DropdownMenu>
   )
 }
-

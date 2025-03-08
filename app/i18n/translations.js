@@ -54,6 +54,6 @@ export const translations = {
   // Add more languages as needed
 }
 
-export type Language = keyof typeof translations
-export type TranslationKey = keyof typeof translations.en
+export const Language = translations
+export const TranslationKey = translations.en
 

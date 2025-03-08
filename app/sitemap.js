@@ -1,6 +1,6 @@
-import type { MetadataRoute } from "next"
+import { MetadataRoute } from "next"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default function sitemap() {
   const baseUrl = "https://spirigo.com"
 
   return [
@@ -48,4 +48,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 }
-

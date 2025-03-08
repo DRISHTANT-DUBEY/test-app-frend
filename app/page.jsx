@@ -64,7 +64,47 @@ export default function PriestBookingPlatform() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 to-white py-20 md:py-32">
-          <div className="container flex flex-col md:flex-row items-center gap-8 md:gap-16">
+          {/* Triangular Flag Background */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div
+              className="absolute top-[10%] left-[10%] w-[300px] h-[200px] pointer-events-none"
+              style={{
+                animation: "flagWave 6s ease-in-out infinite",
+                zIndex: 1,
+                opacity: 0.4
+              }}
+            >
+              <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+                  </filter>
+                </defs>
+                <g>
+                  <path
+                    d="M10,20 L240,20 L240,150 L10,150 Z"
+                    fill="#FF6600"
+                    filter="url(#blur)"
+                  />
+                  <text x="120" y="90" textAnchor="middle" fill="#FFF" fontSize="60" filter="url(#blur)">ॐ</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <style jsx>{`
+            @keyframes flagWave {
+              0% { transform: rotate(0deg) translateY(0); }
+              25% { transform: rotate(2deg) translateY(-5px); }
+              50% { transform: rotate(-1deg) translateY(3px); }
+              75% { transform: rotate(1deg) translateY(-3px); }
+              100% { transform: rotate(0deg) translateY(0); }
+            }
+          `}</style>
+
+
+          <div className="container flex flex-col md:flex-row items-center gap-8 md:gap-16 relative z-10">
+            {/* Rest of your hero section content */}
             <div className="flex-1 space-y-6">
               <div className="inline-block rounded-full bg-orange-100 px-3 py-1 text-sm text-orange-800">
                 {t("spiritual-services-platform")}
@@ -103,7 +143,7 @@ export default function PriestBookingPlatform() {
             </div>
           </div>
 
-          {/* Decorative elements */}
+          {/* Keep your existing decorative elements */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-10">
             <div className="h-[500px] w-[500px] rounded-full bg-orange-500 blur-3xl"></div>
           </div>
